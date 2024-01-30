@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
 
 	///////// RESPAWN /////////
 	public GameObject checkpoint;
-	private void RespawnAtCheckpoint() {
+	public void RespawnAtCheckpoint() {
 		rigidBody.velocity = Vector2.zero;
 		transform.position = checkpoint.transform.position;
 		isGrounded = false;
