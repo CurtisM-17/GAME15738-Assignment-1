@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class KillBricks : MonoBehaviour
 {
-	public PlayerMovement plrScript;
+	public bool destroyOnTouch = false;
 
 	private void OnTriggerEnter2D(Collider2D collision) {
 		if (collision.gameObject.layer != 7) return; // Player only
 
-		plrScript.RespawnAtCheckpoint();
+		collision.gameObject.GetComponent<PlayerMovement>().RespawnAtCheckpoint();
+
+		if (destroyOnTouch) Destroy(gameObject);
 	}
 }

@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
 	///////// SETUP /////////
 	private void Start() {
-		rigidBody = gameObject.GetComponent<Rigidbody2D>();
+		rigidBody = GetComponent<Rigidbody2D>();
 		RespawnAtCheckpoint();
 	}
 
