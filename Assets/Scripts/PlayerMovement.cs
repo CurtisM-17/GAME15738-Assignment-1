@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
 	///////// MAIN VARIABLES /////////
 	public float moveSpeed = 5f;
-	public float jumpPower = 10f;
+	public float jumpPower = 360f;
 	public float dashPower = 7f;
 
 	Rigidbody2D rigidBody;
@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 	///////// SETUP /////////
 	private void Start() {
 		rigidBody = gameObject.GetComponent<Rigidbody2D>();
+		RespawnAtCheckpoint();
 	}
 
 	///////// CONTROLS /////////
@@ -63,5 +64,6 @@ public class PlayerMovement : MonoBehaviour
 	private void RespawnAtCheckpoint() {
 		rigidBody.velocity = Vector2.zero;
 		transform.position = checkpoint.transform.position;
+		isGrounded = false;
 	}
 }
